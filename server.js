@@ -1,3 +1,4 @@
+const cors = require('cors');
 import express from 'express';
 import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
@@ -5,6 +6,7 @@ import { OpenAI } from 'openai';
 
 dotenv.config();
 const app = express();
+app.use(cors());
 const port = process.env.PORT || 3000;
 
 const openai = new OpenAI({
